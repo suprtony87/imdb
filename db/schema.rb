@@ -11,28 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141022010344) do
+ActiveRecord::Schema.define(version: 20150423005623) do
 
   create_table "actors", force: true do |t|
-    t.string   "name"
+    t.text     "name"
     t.integer  "year_of_birth"
-    t.string   "thumbnail"
+    t.text     "thumbnail"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "actors_movies", force: true do |t|
-    t.integer  "actor_id"
-    t.integer  "movie_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer "actor_id"
+    t.integer "movie_id"
   end
 
   create_table "movies", force: true do |t|
-    t.string   "title"
+    t.text     "title"
     t.text     "summary"
-    t.string   "youtube_embed_id"
-    t.string   "thumbnail"
+    t.text     "youtube_embed_id"
+    t.text     "thumbnail"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -46,9 +44,8 @@ ActiveRecord::Schema.define(version: 20141022010344) do
   end
 
   create_table "users", force: true do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "email"
+    t.text     "first_name"
+    t.text     "last_name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

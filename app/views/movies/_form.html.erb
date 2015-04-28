@@ -1,0 +1,39 @@
+
+<% if @movie.errors.any? %>
+  Please fix the following errors:
+  <% @movie.errors.full_messages.each do |message| %>
+    <%= message %>
+  <% end %>
+<% end %>
+
+<%= form_for @movie do |f| %>
+
+<%= f.label :title, 'What is the movie title?' %>
+</br>
+<%= f.text_field :title %>
+
+</br>
+</br>
+
+<%= f.label :summary, 'Enter a Summary' %>
+</br>
+<%= f.text_field :summary %>
+
+</br>
+</br>
+
+<%= f.label :youtube_embed_id, 'Enter the trailers youtube link' %>
+</br>
+<%= f.text_field :youtube_embed_id %>
+
+</br>
+</br>
+
+<%= f.label :thumbnail, 'Enter a thumbnail url' %>
+</br>
+
+<%= f.text_field :thumbnail %>
+</br>
+
+<%= f.submit %>
+<% end %>
